@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import NavBar from "./components/NavBar";
+import CardElement from "./components/Card";
+import Hero from "./Routes/Hero";
+import HTMLlogo from "./images/html.png";
+import CSSlogo from "./images/css.png";
+import JSlogo from "./images/js.png";
+import PHPlogo from "./images/php.png";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar />
+      <Hero />
+      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+        <CardElement
+          title="HTML"
+          subtitle="(Hyper Text Markup Language)"
+          image={HTMLlogo}
+        />
+        <CardElement
+          title="CSS"
+          subtitle="(Cascading Style Sheet)"
+          image={CSSlogo}
+        />
+        <CardElement title="JS" subtitle="(JavaScript)" image={JSlogo} />
+        <CardElement
+          title="PHP"
+          subtitle="(Personal Hypertext Pre-Processor)"
+          image={PHPlogo}
+        />
+      </div>
+    </>
   );
-}
+};
 
 export default App;
