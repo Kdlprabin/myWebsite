@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "./components/NavBar";
-import CardElement from "./components/Card";
+import InfoBar from "./components/InfoBar"
+import CardGrid from "./CardGrid";
 import Hero from "./Routes/Hero";
 import HTMLlogo from "./images/html.png";
 import CSSlogo from "./images/css.png";
@@ -12,24 +13,8 @@ const App = () => {
     <>
       <NavBar />
       <Hero />
-      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-        <CardElement
-          title="HTML"
-          subtitle="(Hyper Text Markup Language)"
-          image={HTMLlogo}
-        />
-        <CardElement
-          title="CSS"
-          subtitle="(Cascading Style Sheet)"
-          image={CSSlogo}
-        />
-        <CardElement title="JS" subtitle="(JavaScript)" image={JSlogo} />
-        <CardElement
-          title="PHP"
-          subtitle="(Personal Hypertext Pre-Processor)"
-          image={PHPlogo}
-        />
-      </div>
+      <InfoBar message="My Arsenal includes some of these:" />
+      <CardGrid   HTMLlogo={HTMLlogo} CSSlogo={CSSlogo} JSlogo={JSlogo} PHPlogo={PHPlogo}  />
     </>
   );
 };
